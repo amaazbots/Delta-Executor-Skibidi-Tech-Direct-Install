@@ -11,141 +11,152 @@
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-font-family:Inter,sans-serif;
-height:100vh;
-overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-background:#050816;
-color:white;
+    font-family:Inter,sans-serif;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#050816;
+    color:white;
 }
 
 .bg{
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at 15% 20%,#ff3b5d55,transparent 30%),
-radial-gradient(circle at 85% 80%,#ff8c0050,transparent 30%),
-radial-gradient(circle at 50% 40%,#2563eb30,transparent 40%),
-#050816;
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at 15% 20%,#ff3b5d55,transparent 30%),
+        radial-gradient(circle at 85% 80%,#ff8c0050,transparent 30%),
+        radial-gradient(circle at 50% 40%,#2563eb30,transparent 40%),
+        #050816;
 }
 
 .bg::before{
-content:"";
-position:absolute;
-inset:-50%;
-background:
-radial-gradient(circle,rgba(255,255,255,.14) 1px,transparent 1px);
-background-size:42px 42px;
-animation:spin 80s linear infinite;
-opacity:.45;
+    content:"";
+    position:absolute;
+    inset:-50%;
+    background:
+        radial-gradient(circle,rgba(255,255,255,.14) 1px,transparent 1px);
+    background-size:42px 42px;
+    animation:spin 80s linear infinite;
+    opacity:.45;
 }
 
 @keyframes spin{
-from{transform:rotate(0deg);}
-to{transform:rotate(360deg);}
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
 }
 
 .card{
-position:relative;
-z-index:5;
-width:430px;
-max-width:92%;
-padding:42px;
-text-align:center;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(30px);
-border-radius:30px;
-border:1px solid rgba(255,255,255,.12);
-box-shadow:0 25px 80px rgba(0,0,0,.5);
+    position:relative;
+    z-index:5;
+    width:430px;
+    max-width:92%;
+    padding:42px;
+    text-align:center;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(30px);
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 25px 80px rgba(0,0,0,.5);
 }
 
 .icon{
-width:110px;
-height:110px;
-margin:auto;
-margin-bottom:24px;
-border-radius:28px;
-background:linear-gradient(135deg,#ff3b5d,#ff6b00);
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:48px;
-font-weight:800;
-box-shadow:0 0 45px rgba(255,80,80,.55);
-animation:pulse 3s infinite;
+    width:120px;
+    height:120px;
+    display:block;
+    margin:0 auto 28px;
+    object-fit:cover;
+    border-radius:28px;
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:
+        0 0 25px rgba(255,255,255,.08),
+        0 15px 45px rgba(0,0,0,.45),
+        0 0 70px rgba(255,70,70,.18);
+    animation:float 4s ease-in-out infinite;
+    transition:.3s;
 }
 
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.05);}
-100%{transform:scale(1);}
+.icon:hover{
+    transform:scale(1.05);
+    box-shadow:
+        0 0 35px rgba(255,255,255,.12),
+        0 20px 60px rgba(0,0,0,.55),
+        0 0 90px rgba(255,70,70,.3);
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
 }
 
 h1{
-font-size:34px;
-font-weight:800;
-margin-bottom:10px;
+    font-size:34px;
+    font-weight:800;
+    margin-bottom:10px;
 }
 
 .subtitle{
-color:#c2cad8;
-line-height:1.6;
-font-size:16px;
+    color:#c2cad8;
+    line-height:1.6;
+    font-size:16px;
 }
 
 .badge{
-display:inline-block;
-margin-top:22px;
-padding:8px 18px;
-border-radius:999px;
-background:#18c96422;
-border:1px solid #18c96466;
-color:#8df0b2;
-font-weight:700;
+    display:inline-block;
+    margin-top:22px;
+    padding:8px 18px;
+    border-radius:999px;
+    background:#18c96422;
+    border:1px solid #18c96466;
+    color:#8df0b2;
+    font-weight:700;
 }
 
 .install{
-margin-top:34px;
-width:100%;
-padding:20px;
-border:none;
-border-radius:18px;
-font-size:21px;
-font-weight:800;
-color:white;
-cursor:pointer;
-background:linear-gradient(135deg,#ff3b5d,#ff6b00);
-box-shadow:0 0 45px rgba(255,80,80,.45);
-transition:.25s;
+    margin-top:34px;
+    width:100%;
+    padding:20px;
+    border:none;
+    border-radius:18px;
+    font-size:21px;
+    font-weight:800;
+    color:white;
+    cursor:pointer;
+    background:linear-gradient(135deg,#ff3b5d,#ff6b00);
+    box-shadow:0 0 45px rgba(255,80,80,.45);
+    transition:.25s;
 }
 
 .install:hover{
-transform:translateY(-4px) scale(1.02);
-box-shadow:0 0 70px rgba(255,80,80,.75);
+    transform:translateY(-4px) scale(1.02);
+    box-shadow:0 0 70px rgba(255,80,80,.75);
 }
 
 .status{
-margin-top:22px;
-font-weight:600;
-color:#6db6ff;
+    margin-top:22px;
+    font-weight:600;
+    color:#6db6ff;
 }
 
 .footer{
-margin-top:30px;
-font-size:13px;
-color:#6d768a;
+    margin-top:30px;
+    font-size:13px;
+    color:#6d768a;
 }
 
 .footer b{
-color:white;
+    color:white;
 }
 
 </style>
@@ -158,7 +169,7 @@ color:white;
 
 <div class="card">
 
-<div class="icon">Δ</div>
+<img src="Delta%20black.jpg" class="icon" alt="Delta Executor">
 
 <h1>Delta Executor</h1>
 
@@ -187,29 +198,24 @@ Powered by <b>Amaazbots</b>
 <script>
 
 function install(){
-
-window.location.href="itms-services://?action=download-manifest&url=https://delta.bz/manifest.plist";
-
+    window.location.href="itms-services://?action=download-manifest&url=https://delta.bz/manifest.plist";
 }
 
 let seconds=5;
 
 const timer=setInterval(()=>{
 
-seconds--;
+    seconds--;
 
-document.getElementById("status").innerHTML=
-seconds>0
-?`Launching installer in ${seconds} seconds...`
-:"Launching installer...";
+    document.getElementById("status").innerHTML=
+    seconds>0
+    ?`Launching installer in ${seconds} seconds...`
+    :"Launching installer...";
 
-if(seconds<=0){
-
-clearInterval(timer);
-
-install();
-
-}
+    if(seconds<=0){
+        clearInterval(timer);
+        install();
+    }
 
 },1000);
 

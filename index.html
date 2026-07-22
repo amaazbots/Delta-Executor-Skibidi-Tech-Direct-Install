@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Install Delta</title>
+
+<script>
+function install() {
+    window.location.href =
+    "itms-services://?action=download-manifest&url=https://delta.bz/manifest.plist";
+}
+</script>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#0b1220;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.card{
+    width:400px;
+    max-width:90%;
+    text-align:center;
+    padding:40px;
+    border-radius:24px;
+    background:#1b2435;
+}
+button{
+    width:100%;
+    padding:18px;
+    margin-top:25px;
+    border:none;
+    border-radius:16px;
+    font-size:20px;
+    font-weight:bold;
+    color:white;
+    background:#2563eb;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>Delta Executor</h1>
+
+<p>Tap the button below to begin installation.</p>
+
+<button onclick="install()">
+Install Delta
+</button>
+
+</div>
+
+</body>
+</html>
